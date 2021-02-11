@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content%}
+<h1>Home page</h1>
+
+{% if user.is_authenticated %}
+<a href="{% url 'judge-logout' %}">logout</a><br/>
+{% else %}
+<a href="{% url 'judge-login' %}">login</a><br/>
+<a href="{% url 'judge-register' %}">register</a><br/>
+{% endif %}
+
+{% endblock %}
